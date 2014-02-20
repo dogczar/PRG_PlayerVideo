@@ -1,4 +1,4 @@
-PRG_PlayerVideoTVEscola
-=======================
+PRG_PlayerVideo
+===============
 
-Protóipo do player de video para TvEscola. 
+Protóipo do player de video. 
