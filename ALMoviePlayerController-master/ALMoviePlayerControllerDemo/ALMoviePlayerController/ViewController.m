@@ -34,21 +34,43 @@
     
     self.view.backgroundColor = [UIColor darkGrayColor];
 //    
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Local File" style:UIBarButtonItemStyleBordered target:self action:@selector(localFile)];
-    self.navigationItem.leftBarButtonItem.enabled = NO;
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Remote File" style:UIBarButtonItemStyleBordered target:self action:@selector(remoteFile)];
-    self.navigationItem.rightBarButtonItem.enabled = NO;
+//    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Local File" style:UIBarButtonItemStyleBordered target:self action:@selector(localFile)];
+//    self.navigationItem.leftBarButtonItem.enabled = NO;
+//    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Remote File" style:UIBarButtonItemStyleBordered target:self action:@selector(remoteFile)];
+//    self.navigationItem.rightBarButtonItem.enabled = NO;
     
     
     //add navigatorbar resolver problema de compatibilidade com o IOS 7 -
     
-//    navBar = [[self navigationController] navigationBar];
-//    navBar.translucent = NO;
-//    [navBar setBackgroundImage:[UIImage imageNamed:@"barra_video.png"] forBarMetrics:UIBarMetricsDefault];
+    navBar = [[self navigationController] navigationBar];
+    navBar.translucent = NO;
+    [navBar setBackgroundImage:[UIImage imageNamed:@"topbarra.png"] forBarMetrics:UIBarMetricsDefault];
 
     
-       // [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:NO];
+        [[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:NO];
     
+    
+        /// add button full
+    
+    _fullScreenButton = [[UIButton alloc] initWithFrame:(CGRectMake(300.0, 450.0, 20., 20))];
+    
+    [_fullScreenButton setBackgroundImage:[UIImage imageNamed:@"fullscreen-button"] forState:UIControlStateNormal];
+    
+    [_fullScreenButton setShowsTouchWhenHighlighted:YES];
+    
+    [_fullScreenButton addTarget:self action:@selector(gotofull) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.view addSubview:_fullScreenButton];
+    
+    
+    
+    // imagem de teste
+    
+    UIImageView *corpo = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"corpo.png"]];
+    
+    [corpo setFrame:(CGRectMake(0, 218.0, 320, 300))];
+    
+    [self.view addSubview:corpo];
     
     
     //create a player
@@ -90,18 +112,10 @@
     
     
     
-    /// add button
+
     
     
-    _fullScreenButton = [[UIButton alloc] initWithFrame:(CGRectMake(80.0, 300.0, 20., 20))];
-    
-    [_fullScreenButton setBackgroundImage:[UIImage imageNamed:@"fullscreen-button"] forState:UIControlStateNormal];
-    
-    [_fullScreenButton setShowsTouchWhenHighlighted:YES];
-    
-    [_fullScreenButton addTarget:self action:@selector(gotofull) forControlEvents:UIControlEventTouchUpInside];
-    
-    [self.view addSubview:_fullScreenButton];
+
     
     
     
@@ -137,7 +151,7 @@
     
     // muda posicao do player
     //calulate the frame on every rotation, so when we're returning from fullscreen mode we'll know where to position the movie plauyer
-    self.defaultFrame = CGRectMake(0, 66, videoWidth, videoHeight);
+    self.defaultFrame = CGRectMake(0, 0, videoWidth, videoHeight);
     
     //only manage the movie player frame when it's not in fullscreen. when in fullscreen, the frame is automatically managed
     if (self.moviePlayer.isFullscreen)
@@ -145,6 +159,15 @@
     
     //you MUST use [ALMoviePlayerController setFrame:] to adjust frame, NOT [ALMoviePlayerController.view setFrame:]
     [self.moviePlayer setFrame:self.defaultFrame];
+    
+    
+    
+
+
+    
+    
+    
+    
 }
 
 //these files are in the public domain and no longer have property rights
@@ -184,8 +207,46 @@
 
 -(void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
     [super willAnimateRotationToInterfaceOrientation:toInterfaceOrientation duration:duration];
-    [self configureViewForOrientation:toInterfaceOrientation];
+    
+    
+
+    
+   
+    if (toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft || toInterfaceOrientation == UIInterfaceOrientationLandscapeRight )
+        {
+         // [self.moviePlayer.controls sair_fullscrenn];
+         
+          
+          
+       [self.moviePlayer.controls fullscreenPressed:_fullScreenButton];
+          
+          
+          
+        } else if (toInterfaceOrientation == UIInterfaceOrientationPortrait)
+          {
+                [self.moviePlayer.controls fullscreenPressed:_fullScreenButton];
+           
+           // [self.moviePlayer.controls sair_fullscrenn];
+            
+            
+            
+          }
+
+    
+//    [self moviePlayerWillMoveFromWindow];
+//
+//   [self configureViewForOrientation:toInterfaceOrientation];
+  
+    
+    
+  
+    
+  
+    
 }
+
+
+
 
 - (void)didReceiveMemoryWarning
 {

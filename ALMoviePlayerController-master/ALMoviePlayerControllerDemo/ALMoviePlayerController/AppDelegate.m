@@ -18,7 +18,7 @@
     
       //[[UIApplication sharedApplication] setStatusBarHidden:YES withAnimation:NO];
     
-    //[[UIApplication sharedApplication] setStatusBarHidden:YES];
+    [[UIApplication sharedApplication] setStatusBarHidden:YES];
     
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:[[ViewController alloc] init]];
     self.window.rootViewController = navigationController;

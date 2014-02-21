@@ -101,4 +101,7 @@ typedef enum {
 
 - (void)fullscreenPressed:(UIButton *)button;
 
+
+- (void)sair_fullscrenn;
+
 @end

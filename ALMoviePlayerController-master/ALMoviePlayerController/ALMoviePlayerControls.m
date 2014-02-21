@@ -418,6 +418,32 @@ static const CGFloat iPhoneScreenPortraitWidth = 320.f;
     [self performSelector:@selector(hideControls:) withObject:nil afterDelay:self.fadeDelay];
 }
 
+//tira o player do fullscrenn quando vira a tela
+- (void)sair_fullscrenn{
+    
+    
+
+   
+        self.style = ALMoviePlayerControlsStyleFullscreen;
+
+    if (self.moviePlayer.currentPlaybackRate != 1.f) {
+        self.moviePlayer.currentPlaybackRate = 1.f;
+    }
+    
+    [self.moviePlayer setFullscreen:!self.moviePlayer.isFullscreen animated:YES];
+    
+
+    
+    [self performSelector:@selector(hideControls:) withObject:nil afterDelay:self.fadeDelay];
+    
+   
+  
+    
+}
+
+
+
+
 - (void)scalePressed:(UIButton *)button {
     button.selected = !button.selected;
     [self.moviePlayer setScalingMode:button.selected ? MPMovieScalingModeAspectFill : MPMovieScalingModeAspectFit];
