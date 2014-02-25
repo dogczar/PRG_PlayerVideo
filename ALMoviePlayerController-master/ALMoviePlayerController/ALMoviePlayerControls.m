@@ -408,32 +408,53 @@ static const CGFloat iPhoneScreenPortraitWidth = 320.f;
 }
 
 - (void)fullscreenPressed:(UIButton *)button {
-    if (self.style == ALMoviePlayerControlsStyleDefault) {
-        self.style = self.moviePlayer.isFullscreen ? ALMoviePlayerControlsStyleEmbedded : ALMoviePlayerControlsStyleFullscreen;
-    }
+//    if (self.style == ALMoviePlayerControlsStyleDefault) {
+//        self.style = self.moviePlayer.isFullscreen ? ALMoviePlayerControlsStyleEmbedded : ALMoviePlayerControlsStyleFullscreen;
+//    }
+//    if (self.moviePlayer.currentPlaybackRate != 1.f) {
+//        self.moviePlayer.currentPlaybackRate = 1.f;
+//    }
+//    [self.moviePlayer setFullscreen:!self.moviePlayer.isFullscreen animated:YES];
+//    [self performSelector:@selector(hideControls:) withObject:nil afterDelay:self.fadeDelay];
+    
+    
+       self.style =   ALMoviePlayerControlsStyleFullscreen;
+    
+    
+    
+    [self.moviePlayer setFullscreen:YES];
+    
     if (self.moviePlayer.currentPlaybackRate != 1.f) {
         self.moviePlayer.currentPlaybackRate = 1.f;
     }
-    [self.moviePlayer setFullscreen:!self.moviePlayer.isFullscreen animated:YES];
+    
     [self performSelector:@selector(hideControls:) withObject:nil afterDelay:self.fadeDelay];
+
+    
+    
+    
 }
+
+
 
 //tira o player do fullscrenn quando vira a tela
 - (void)sair_fullscrenn{
-    
-    
 
-   
-        self.style = ALMoviePlayerControlsStyleFullscreen;
-
+      [self.moviePlayer setFullscreen:NO];
+//    
+//    if (self.moviePlayer.isFullscreen) {
+        self.style =  ALMoviePlayerControlsStyleEmbedded;
+        
+//    }else{
+//        
+//        self.style = ALMoviePlayerControlsStyleDefault;
+//        
+//    }
+    
     if (self.moviePlayer.currentPlaybackRate != 1.f) {
         self.moviePlayer.currentPlaybackRate = 1.f;
     }
-    
-    [self.moviePlayer setFullscreen:!self.moviePlayer.isFullscreen animated:YES];
-    
-
-    
+   
     [self performSelector:@selector(hideControls:) withObject:nil afterDelay:self.fadeDelay];
     
    

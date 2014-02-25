@@ -9,6 +9,9 @@
 #import "ViewController.h"
 #import "ALMoviePlayerController.h"
 
+#define deg2rad (3.1415926/180.0)
+ #define IS_IPHONE_5 ( fabs( ( double )[ [ UIScreen mainScreen ] bounds ].size.height - ( double )568 ) < DBL_EPSILON )
+
 @interface ViewController () <ALMoviePlayerControllerDelegate>
 
 @property (nonatomic, strong) ALMoviePlayerController *moviePlayer;
@@ -19,6 +22,17 @@
 
 @implementation ViewController
 
+BOOL _statusBarHidden;
+
+BOOL _flaggotofull;
+
+
+
+- (BOOL)prefersStatusBarHidden {
+    return _statusBarHidden;
+}
+
+
 - (id)init {
     self = [super init];
     if (self) {
@@ -27,8 +41,9 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
+
+- (void)viewDidLoad{
+    
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
@@ -38,6 +53,12 @@
 //    self.navigationItem.leftBarButtonItem.enabled = NO;
 //    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Remote File" style:UIBarButtonItemStyleBordered target:self action:@selector(remoteFile)];
 //    self.navigationItem.rightBarButtonItem.enabled = NO;
+    
+    
+    //seta flag
+    _flaggotofull =NO;
+    
+    
     
     
     //add navigatorbar resolver problema de compatibilidade com o IOS 7 -
@@ -52,7 +73,7 @@
     
         /// add button full
     
-    _fullScreenButton = [[UIButton alloc] initWithFrame:(CGRectMake(300.0, 450.0, 20., 20))];
+    _fullScreenButton = [[UIButton alloc] initWithFrame:(CGRectMake(300.0, 225.0, 15, 15))];
     
     [_fullScreenButton setBackgroundImage:[UIImage imageNamed:@"fullscreen-button"] forState:UIControlStateNormal];
     
@@ -66,11 +87,11 @@
     
     // imagem de teste
     
-    UIImageView *corpo = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"corpo.png"]];
-    
-    [corpo setFrame:(CGRectMake(0, 218.0, 320, 300))];
-    
-    [self.view addSubview:corpo];
+//    UIImageView *corpo = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"corpo.png"]];
+//    
+//    [corpo setFrame:(CGRectMake(0, 218.0, 320, 300))];
+//    
+//    [self.view addSubview:corpo];
     
     
     //create a player
@@ -109,29 +130,49 @@
             self.navigationItem.rightBarButtonItem.enabled = YES;
         }];
     });
-    
-    
-    
 
-    
-    
-
-    
-    
     
 }
 
 
+
 -(void)gotofull{
     
+    _flaggotofull =YES;
+    // esconde navigator
+    navBar.hidden = YES;
+
+
+    //gira a tela
+    self.view.transform=CGAffineTransformMakeRotation(deg2rad* (90));
     
-    //    [self.moviePlayer.ALMoviePlayerControlsStyleFullscreen];
-    //
     
-    [self.moviePlayer.controls fullscreenPressed:_fullScreenButton];
-    //[self.moviePlayer setFullscreen:YES animated:YES];
+     if( IS_IPHONE_5 ){
+         self.view.bounds=CGRectMake(0.0,0.0,568.0,320.0);
+         
+         [self.moviePlayer setFrame:CGRectMake(0.0,0.0,568.0,320.0)];
+
+         
+     }else{
+         
+         self.view.bounds=CGRectMake(0.0,0.0,480.0,320.0);
+         
+         [self.moviePlayer setFrame:CGRectMake(0.0,0.0,480.0,320.0)];
+         
+         
+     }
     
     
+    //esconde o status e seta a aparencia da view
+    _statusBarHidden = YES;
+    
+    [self setNeedsStatusBarAppearanceUpdate];
+    
+//   [self.moviePlayer.controls fullscreenPressed:_fullScreenButton];
+////    
+//    if (![self.view.subviews containsObject:self.moviePlayer.view])
+//        [self.view addSubview:self.moviePlayer.view];
+//
     
 }
 
@@ -161,14 +202,9 @@
     [self.moviePlayer setFrame:self.defaultFrame];
     
     
-    
-
-
-    
-    
-    
-    
 }
+
+
 
 //these files are in the public domain and no longer have property rights
 - (void)localFile {
@@ -177,11 +213,15 @@
     [self.moviePlayer play];
 }
 
+
+
 - (void)remoteFile {
     [self.moviePlayer stop];
     [self.moviePlayer setContentURL:[NSURL URLWithString:@"http://archive.org/download/WaltDisneyCartoons-MickeyMouseMinnieMouseDonaldDuckGoofyAndPluto/WaltDisneyCartoons-MickeyMouseMinnieMouseDonaldDuckGoofyAndPluto-HawaiianHoliday1937-Video.mp4"]];
     [self.moviePlayer play];
 }
+
+
 
 //IMPORTANT!
 - (void)moviePlayerWillMoveFromWindow {
@@ -193,38 +233,130 @@
     [self.moviePlayer setFrame:self.defaultFrame];
 }
 
+
+
 - (void)movieTimedOut {
     NSLog(@"MOVIE TIMED OUT");
 }
+
+
 
 - (BOOL)shouldAutorotate {
     return YES;
 }
 
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
     return YES;
 }
 
+
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation{
+    
+ 
+    
+//    if (fromInterfaceOrientation == UIInterfaceOrientationLandscapeLeft || fromInterfaceOrientation == UIInterfaceOrientationLandscapeRight )
+//      {
+//        // [self.moviePlayer.controls sair_fullscrenn];
+//        
+//        
+//        
+//        [self.moviePlayer.controls fullscreenPressed:_fullScreenButton];
+//        
+//       // [self.moviePlayer setFrame:self.defaultFrame];
+//        
+//      } else if (fromInterfaceOrientation == UIInterfaceOrientationPortrait)
+//        {
+//          [self.moviePlayer.controls sair_fullscrenn];
+//          
+//          // [self.moviePlayer.controls sair_fullscrenn];
+//          
+//          
+//          
+//        }
+    
+    
+    
+}
+
+
+
+
 -(void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
     [super willAnimateRotationToInterfaceOrientation:toInterfaceOrientation duration:duration];
-    
-    
-
     
    
     if (toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft || toInterfaceOrientation == UIInterfaceOrientationLandscapeRight )
         {
          // [self.moviePlayer.controls sair_fullscrenn];
          
-          
+//     self.view.bounds=CGRectMake(0.0,0.0,480.0,320.0);
           
        [self.moviePlayer.controls fullscreenPressed:_fullScreenButton];
           
+          if (![self.view.subviews containsObject:self.moviePlayer.view])
+              [self.view addSubview:self.moviePlayer.view];
+//
+//         [self.moviePlayer setFrame:CGRectMake(0.0,0.0,480.0,320.0)];
           
+//           [self.moviePlayer setFrame:self.defaultFrame];
           
-        } else if (toInterfaceOrientation == UIInterfaceOrientationPortrait)
+        } else if (toInterfaceOrientation == UIInterfaceOrientationPortrait || toInterfaceOrientation == UIInterfaceOrientationPortraitUpsideDown)
           {
-                [self.moviePlayer.controls fullscreenPressed:_fullScreenButton];
+            
+            
+            //se alterou view pelo metofo gotofull
+            if (_flaggotofull == YES) {
+                
+             
+                // esconde navigator
+                navBar.hidden = NO;
+                
+                
+                //gira a tela
+                        self.view.transform=CGAffineTransformMakeRotation(deg2rad* (0));
+                
+                
+                if( IS_IPHONE_5 ){
+                    self.view.bounds=CGRectMake(0.0,0.0,320.0,568.0);
+                    
+//                    [self.moviePlayer setFrame:CGRectMake(0.0,0.0,320.0,220.0)];
+                    
+                    
+                }else{
+                    
+                    self.view.bounds=CGRectMake(0.0,0.0,320.0,480.0);
+                    
+//                    [self.moviePlayer setFrame:CGRectMake(0.0,0.0,320.0,220.0)];
+                    
+                    
+                }
+                
+                
+                //esconde o status e seta a aparencia da view
+                _statusBarHidden = NO;
+                
+                [self setNeedsStatusBarAppearanceUpdate];
+                
+                   _flaggotofull =NO;
+                
+
+            }
+            
+
+            
+            
+            
+                [self.moviePlayer.controls sair_fullscrenn];
+            
+            
+            if (![self.view.subviews containsObject:self.moviePlayer.view])
+                [self.view addSubview:self.moviePlayer.view];
+            //
+            [self.moviePlayer setFrame:CGRectMake(0.0,0.0,self.view.frame.size.width,220.0)];
+            
+            
+            
            
            // [self.moviePlayer.controls sair_fullscrenn];
             
@@ -235,13 +367,9 @@
     
 //    [self moviePlayerWillMoveFromWindow];
 //
-//   [self configureViewForOrientation:toInterfaceOrientation];
+   //[self configureViewForOrientation:toInterfaceOrientation];
   
-    
-    
-  
-    
-  
+
     
 }
 
@@ -253,5 +381,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
 
 @end
