@@ -44,6 +44,9 @@ BOOL _flaggotofull;
 
 - (void)viewDidLoad{
     
+    //Apenas um comentario para teste do git.
+    
+    
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
