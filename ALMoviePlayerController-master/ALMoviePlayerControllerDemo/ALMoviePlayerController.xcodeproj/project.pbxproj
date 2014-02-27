@@ -20,6 +20,21 @@
 		2CB5D0F518B6557D00BFE4F1 /* barra_video@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CB5D0F418B6557D00BFE4F1 /* barra_video@2x.png */; };
 		2CB5D0F918B680ED00BFE4F1 /* topbarra@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CB5D0F818B680ED00BFE4F1 /* topbarra@2x.png */; };
 		2CB5D0FB18B6889C00BFE4F1 /* corpo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CB5D0FA18B6889C00BFE4F1 /* corpo@2x.png */; };
+		331EE29418BF7F7800F87912 /* RatingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 331EE29218BF7F7800F87912 /* RatingView.m */; };
+		331EE29C18BF801700F87912 /* DAPagesContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 331EE29718BF801700F87912 /* DAPagesContainer.m */; };
+		331EE29D18BF801700F87912 /* DAPagesContainerTopBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 331EE29918BF801700F87912 /* DAPagesContainerTopBar.m */; };
+		331EE29E18BF801700F87912 /* DAPageIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 331EE29B18BF801700F87912 /* DAPageIndicatorView.m */; };
+		331EE2A518BF823C00F87912 /* videotecaBeta.xib in Resources */ = {isa = PBXBuildFile; fileRef = 331EE29F18BF823C00F87912 /* videotecaBeta.xib */; };
+		331EE2A618BF823C00F87912 /* ImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 331EE2A118BF823C00F87912 /* ImageCell.m */; };
+		331EE2A718BF823C00F87912 /* ImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 331EE2A218BF823C00F87912 /* ImageCell.xib */; };
+		331EE2A818BF823C00F87912 /* videotecaBeta.m in Sources */ = {isa = PBXBuildFile; fileRef = 331EE2A418BF823C00F87912 /* videotecaBeta.m */; };
+		331EE2AC18BF824E00F87912 /* videotecaBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 331EE2AA18BF824E00F87912 /* videotecaBar.m */; };
+		331EE2AD18BF824E00F87912 /* videotecaBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 331EE2AB18BF824E00F87912 /* videotecaBar.xib */; };
+		331EE2B218BF826C00F87912 /* UIImageView+UIActivityIndicatorForSDWebImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 331EE2B118BF826C00F87912 /* UIImageView+UIActivityIndicatorForSDWebImage.m */; };
+		331EE2B418BF833000F87912 /* SDWebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 331EE2B318BF833000F87912 /* SDWebImage.framework */; };
+		331EE2B618BF835000F87912 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 331EE2B518BF835000F87912 /* ImageIO.framework */; };
+		331EE2BA18BF843700F87912 /* testeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 331EE2B818BF843700F87912 /* testeView.m */; };
+		331EE2BB18BF843700F87912 /* testeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 331EE2B918BF843700F87912 /* testeView.xib */; };
 		4F1FABCB18072DD800849D06 /* movieEndFullscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F1FABC918072DD800849D06 /* movieEndFullscreen.png */; };
 		4F1FABCC18072DD800849D06 /* movieEndFullscreen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F1FABCA18072DD800849D06 /* movieEndFullscreen@2x.png */; };
 		4FE7646618045F5A00D91AF3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FE7646518045F5A00D91AF3 /* Foundation.framework */; };
@@ -74,6 +89,30 @@
 		2CB5D0F418B6557D00BFE4F1 /* barra_video@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "barra_video@2x.png"; sourceTree = "<group>"; };
 		2CB5D0F818B680ED00BFE4F1 /* topbarra@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "topbarra@2x.png"; sourceTree = "<group>"; };
 		2CB5D0FA18B6889C00BFE4F1 /* corpo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "corpo@2x.png"; sourceTree = "<group>"; };
+		331EE29218BF7F7800F87912 /* RatingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatingView.m; sourceTree = "<group>"; };
+		331EE29318BF7F7800F87912 /* RatingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatingView.h; sourceTree = "<group>"; };
+		331EE29618BF801700F87912 /* DAPagesContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAPagesContainer.h; sourceTree = "<group>"; };
+		331EE29718BF801700F87912 /* DAPagesContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAPagesContainer.m; sourceTree = "<group>"; };
+		331EE29818BF801700F87912 /* DAPagesContainerTopBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAPagesContainerTopBar.h; sourceTree = "<group>"; };
+		331EE29918BF801700F87912 /* DAPagesContainerTopBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAPagesContainerTopBar.m; sourceTree = "<group>"; };
+		331EE29A18BF801700F87912 /* DAPageIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAPageIndicatorView.h; sourceTree = "<group>"; };
+		331EE29B18BF801700F87912 /* DAPageIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAPageIndicatorView.m; sourceTree = "<group>"; };
+		331EE29F18BF823C00F87912 /* videotecaBeta.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = videotecaBeta.xib; sourceTree = "<group>"; };
+		331EE2A018BF823C00F87912 /* ImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCell.h; sourceTree = "<group>"; };
+		331EE2A118BF823C00F87912 /* ImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCell.m; sourceTree = "<group>"; };
+		331EE2A218BF823C00F87912 /* ImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageCell.xib; sourceTree = "<group>"; };
+		331EE2A318BF823C00F87912 /* videotecaBeta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = videotecaBeta.h; sourceTree = "<group>"; };
+		331EE2A418BF823C00F87912 /* videotecaBeta.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = videotecaBeta.m; sourceTree = "<group>"; };
+		331EE2A918BF824D00F87912 /* videotecaBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = videotecaBar.h; sourceTree = "<group>"; };
+		331EE2AA18BF824E00F87912 /* videotecaBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = videotecaBar.m; sourceTree = "<group>"; };
+		331EE2AB18BF824E00F87912 /* videotecaBar.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = videotecaBar.xib; sourceTree = "<group>"; };
+		331EE2B018BF826C00F87912 /* UIImageView+UIActivityIndicatorForSDWebImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+UIActivityIndicatorForSDWebImage.h"; sourceTree = "<group>"; };
+		331EE2B118BF826C00F87912 /* UIImageView+UIActivityIndicatorForSDWebImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+UIActivityIndicatorForSDWebImage.m"; sourceTree = "<group>"; };
+		331EE2B318BF833000F87912 /* SDWebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SDWebImage.framework; sourceTree = "<group>"; };
+		331EE2B518BF835000F87912 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		331EE2B718BF843700F87912 /* testeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testeView.h; sourceTree = "<group>"; };
+		331EE2B818BF843700F87912 /* testeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testeView.m; sourceTree = "<group>"; };
+		331EE2B918BF843700F87912 /* testeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = testeView.xib; sourceTree = "<group>"; };
 		4F1FABC918072DD800849D06 /* movieEndFullscreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = movieEndFullscreen.png; sourceTree = "<group>"; };
 		4F1FABCA18072DD800849D06 /* movieEndFullscreen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "movieEndFullscreen@2x.png"; sourceTree = "<group>"; };
 		4FE7646218045F5A00D91AF3 /* ALMoviePlayerController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ALMoviePlayerController.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,10 +157,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				331EE2B618BF835000F87912 /* ImageIO.framework in Frameworks */,
 				4FE7649718045FA600D91AF3 /* MediaPlayer.framework in Frameworks */,
 				4FE7649518045F9F00D91AF3 /* QuartzCore.framework in Frameworks */,
 				4FE7646818045F5A00D91AF3 /* CoreGraphics.framework in Frameworks */,
 				4FE7646A18045F5A00D91AF3 /* UIKit.framework in Frameworks */,
+				331EE2B418BF833000F87912 /* SDWebImage.framework in Frameworks */,
 				4FE7646618045F5A00D91AF3 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,9 +180,76 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		331EE28B18BF7D8B00F87912 /* Barra horizontal */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Barra horizontal";
+			sourceTree = "<group>";
+		};
+		331EE28E18BF7E1B00F87912 /* Rating */ = {
+			isa = PBXGroup;
+			children = (
+				331EE29218BF7F7800F87912 /* RatingView.m */,
+				331EE29318BF7F7800F87912 /* RatingView.h */,
+			);
+			name = Rating;
+			sourceTree = "<group>";
+		};
+		331EE28F18BF7E6400F87912 /* VideoTeca */ = {
+			isa = PBXGroup;
+			children = (
+				331EE29F18BF823C00F87912 /* videotecaBeta.xib */,
+				331EE2A018BF823C00F87912 /* ImageCell.h */,
+				331EE2A118BF823C00F87912 /* ImageCell.m */,
+				331EE2A218BF823C00F87912 /* ImageCell.xib */,
+				331EE2A318BF823C00F87912 /* videotecaBeta.h */,
+				331EE2A418BF823C00F87912 /* videotecaBeta.m */,
+			);
+			name = VideoTeca;
+			sourceTree = "<group>";
+		};
+		331EE29118BF7E7700F87912 /* VideoTecaBar */ = {
+			isa = PBXGroup;
+			children = (
+				331EE2A918BF824D00F87912 /* videotecaBar.h */,
+				331EE2AA18BF824E00F87912 /* videotecaBar.m */,
+				331EE2AB18BF824E00F87912 /* videotecaBar.xib */,
+			);
+			name = VideoTecaBar;
+			sourceTree = "<group>";
+		};
+		331EE29518BF7FBA00F87912 /* Barra Horizontal */ = {
+			isa = PBXGroup;
+			children = (
+				331EE29618BF801700F87912 /* DAPagesContainer.h */,
+				331EE29718BF801700F87912 /* DAPagesContainer.m */,
+				331EE29818BF801700F87912 /* DAPagesContainerTopBar.h */,
+				331EE29918BF801700F87912 /* DAPagesContainerTopBar.m */,
+				331EE29A18BF801700F87912 /* DAPageIndicatorView.h */,
+				331EE29B18BF801700F87912 /* DAPageIndicatorView.m */,
+			);
+			name = "Barra Horizontal";
+			sourceTree = "<group>";
+		};
+		331EE2AF18BF825E00F87912 /* loadImage */ = {
+			isa = PBXGroup;
+			children = (
+				331EE2B018BF826C00F87912 /* UIImageView+UIActivityIndicatorForSDWebImage.h */,
+				331EE2B118BF826C00F87912 /* UIImageView+UIActivityIndicatorForSDWebImage.m */,
+			);
+			name = loadImage;
+			sourceTree = "<group>";
+		};
 		4FE7645918045F5A00D91AF3 = {
 			isa = PBXGroup;
 			children = (
+				331EE2B318BF833000F87912 /* SDWebImage.framework */,
+				331EE2AF18BF825E00F87912 /* loadImage */,
+				331EE29518BF7FBA00F87912 /* Barra Horizontal */,
+				331EE29118BF7E7700F87912 /* VideoTecaBar */,
+				331EE28F18BF7E6400F87912 /* VideoTeca */,
+				331EE28E18BF7E1B00F87912 /* Rating */,
 				4FE764981804605200D91AF3 /* ALMoviePlayerController */,
 				4FE7646B18045F5A00D91AF3 /* ALMoviePlayerControllerDemo */,
 				4FE7648418045F5A00D91AF3 /* ALMoviePlayerControllerTests */,
@@ -162,6 +270,7 @@
 		4FE7646418045F5A00D91AF3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				331EE2B518BF835000F87912 /* ImageIO.framework */,
 				4FE7649618045FA600D91AF3 /* MediaPlayer.framework */,
 				4FE7649418045F9F00D91AF3 /* QuartzCore.framework */,
 				4FE7646518045F5A00D91AF3 /* Foundation.framework */,
@@ -175,10 +284,14 @@
 		4FE7646B18045F5A00D91AF3 /* ALMoviePlayerControllerDemo */ = {
 			isa = PBXGroup;
 			children = (
+				331EE2B718BF843700F87912 /* testeView.h */,
+				331EE2B818BF843700F87912 /* testeView.m */,
+				331EE2B918BF843700F87912 /* testeView.xib */,
 				4FE7647418045F5A00D91AF3 /* AppDelegate.h */,
 				4FE7647518045F5A00D91AF3 /* AppDelegate.m */,
 				4FE764A51804606B00D91AF3 /* ViewController.h */,
 				4FE764A61804606B00D91AF3 /* ViewController.m */,
+				331EE28B18BF7D8B00F87912 /* Barra horizontal */,
 				4FE764AA180463B100D91AF3 /* Video */,
 				4FE7647718045F5A00D91AF3 /* Images.xcassets */,
 				4FE7646C18045F5A00D91AF3 /* Supporting Files */,
@@ -357,16 +470,20 @@
 				4FE764B218046B1800D91AF3 /* movieFullscreen.png in Resources */,
 				20F694CB18050C8800DEDB45 /* movieForward@2x.png in Resources */,
 				4FE764B418046B1800D91AF3 /* moviePause.png in Resources */,
+				331EE2A718BF823C00F87912 /* ImageCell.xib in Resources */,
+				331EE2BB18BF843700F87912 /* testeView.xib in Resources */,
 				20F694D21805176800DEDB45 /* movieForwardSelected.png in Resources */,
 				2CB5D0F518B6557D00BFE4F1 /* barra_video@2x.png in Resources */,
 				4FE7647818045F5A00D91AF3 /* Images.xcassets in Resources */,
 				4FE764B618046B1800D91AF3 /* moviePlay.png in Resources */,
 				20F694D01805176800DEDB45 /* movieBackwardSelected.png in Resources */,
+				331EE2AD18BF824E00F87912 /* videotecaBar.xib in Resources */,
 				2CB5D0F918B680ED00BFE4F1 /* topbarra@2x.png in Resources */,
 				4FE764B718046B1800D91AF3 /* moviePlay@2x.png in Resources */,
 				2CB5D0FB18B6889C00BFE4F1 /* corpo@2x.png in Resources */,
 				4F1FABCB18072DD800849D06 /* movieEndFullscreen.png in Resources */,
 				4FE764A9180463AE00D91AF3 /* popeye.mp4 in Resources */,
+				331EE2A518BF823C00F87912 /* videotecaBeta.xib in Resources */,
 				20F694C818050C8800DEDB45 /* movieBackward.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -387,12 +504,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FE764A71804606B00D91AF3 /* ViewController.m in Sources */,
+				331EE2A618BF823C00F87912 /* ImageCell.m in Sources */,
+				331EE2AC18BF824E00F87912 /* videotecaBar.m in Sources */,
 				4FE7647618045F5A00D91AF3 /* AppDelegate.m in Sources */,
+				331EE29C18BF801700F87912 /* DAPagesContainer.m in Sources */,
 				4FE7647218045F5A00D91AF3 /* main.m in Sources */,
+				331EE2BA18BF843700F87912 /* testeView.m in Sources */,
+				331EE29E18BF801700F87912 /* DAPageIndicatorView.m in Sources */,
+				331EE2B218BF826C00F87912 /* UIImageView+UIActivityIndicatorForSDWebImage.m in Sources */,
+				331EE2A818BF823C00F87912 /* videotecaBeta.m in Sources */,
 				4FE764A21804605200D91AF3 /* ALButton.m in Sources */,
 				4FE764A11804605200D91AF3 /* ALAirplayView.m in Sources */,
 				4FE764A41804605200D91AF3 /* ALMoviePlayerControls.m in Sources */,
+				331EE29D18BF801700F87912 /* DAPagesContainerTopBar.m in Sources */,
 				4FE764A31804605200D91AF3 /* ALMoviePlayerController.m in Sources */,
+				331EE29418BF7F7800F87912 /* RatingView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -517,10 +643,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/hannahlisboa/Documents/Wokspace_IOS_SVN/PRG_PlayerVideo/ALMoviePlayerController-master/ALMoviePlayerControllerDemo",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ALMoviePlayerController/ALMoviePlayerController-Prefix.pch";
 				INFOPLIST_FILE = "ALMoviePlayerController/ALMoviePlayerController-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -534,10 +665,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/hannahlisboa/Documents/Wokspace_IOS_SVN/PRG_PlayerVideo/ALMoviePlayerController-master/ALMoviePlayerControllerDemo",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ALMoviePlayerController/ALMoviePlayerController-Prefix.pch";
 				INFOPLIST_FILE = "ALMoviePlayerController/ALMoviePlayerController-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;

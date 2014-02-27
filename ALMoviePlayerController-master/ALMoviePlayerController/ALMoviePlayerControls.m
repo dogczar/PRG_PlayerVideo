@@ -39,7 +39,7 @@ static const CGFloat activityIndicatorSize = 40.f;
 static const CGFloat iPhoneScreenPortraitWidth = 320.f;
 
 @interface ALMoviePlayerControls () <ALAirplayViewDelegate, ALButtonDelegate> {
-    @private
+@private
     int windowSubviews;
 }
 
@@ -106,7 +106,7 @@ static const CGFloat iPhoneScreenPortraitWidth = 320.f;
 - (void)setup {
     if (self.style == ALMoviePlayerControlsStyleNone)
         return;
-
+    
     //top bar
     _topBar = [[ALMoviePlayerControlsBar alloc] init];
     _topBar.color = _barColor;
@@ -126,6 +126,9 @@ static const CGFloat iPhoneScreenPortraitWidth = 320.f;
     [_durationSlider addTarget:self action:@selector(durationSliderTouchBegan:) forControlEvents:UIControlEventTouchDown];
     [_durationSlider addTarget:self action:@selector(durationSliderTouchEnded:) forControlEvents:UIControlEventTouchUpInside];
     [_durationSlider addTarget:self action:@selector(durationSliderTouchEnded:) forControlEvents:UIControlEventTouchUpOutside];
+    //cor do slider
+    [[UISlider appearance] setTintColor:[UIColor yellowColor]];
+    
     
     _timeElapsedLabel = [[UILabel alloc] init];
     _timeElapsedLabel.backgroundColor = [UIColor clearColor];
@@ -213,7 +216,7 @@ static const CGFloat iPhoneScreenPortraitWidth = 320.f;
     
     _airplayView = [[ALAirplayView alloc] init];
     _airplayView.delegate = self;
-    [_bottomBar addSubview:_airplayView];
+    //   [_bottomBar addSubview:_airplayView];
     
     _activityBackgroundView = [[UIView alloc] init];
     [_activityBackgroundView setBackgroundColor:[UIColor blackColor]];
@@ -408,17 +411,17 @@ static const CGFloat iPhoneScreenPortraitWidth = 320.f;
 }
 
 - (void)fullscreenPressed:(UIButton *)button {
-//    if (self.style == ALMoviePlayerControlsStyleDefault) {
-//        self.style = self.moviePlayer.isFullscreen ? ALMoviePlayerControlsStyleEmbedded : ALMoviePlayerControlsStyleFullscreen;
-//    }
-//    if (self.moviePlayer.currentPlaybackRate != 1.f) {
-//        self.moviePlayer.currentPlaybackRate = 1.f;
-//    }
-//    [self.moviePlayer setFullscreen:!self.moviePlayer.isFullscreen animated:YES];
-//    [self performSelector:@selector(hideControls:) withObject:nil afterDelay:self.fadeDelay];
+    //    if (self.style == ALMoviePlayerControlsStyleDefault) {
+    //        self.style = self.moviePlayer.isFullscreen ? ALMoviePlayerControlsStyleEmbedded : ALMoviePlayerControlsStyleFullscreen;
+    //    }
+    //    if (self.moviePlayer.currentPlaybackRate != 1.f) {
+    //        self.moviePlayer.currentPlaybackRate = 1.f;
+    //    }
+    //    [self.moviePlayer setFullscreen:!self.moviePlayer.isFullscreen animated:YES];
+    //    [self performSelector:@selector(hideControls:) withObject:nil afterDelay:self.fadeDelay];
     
     
-       self.style =   ALMoviePlayerControlsStyleFullscreen;
+    self.style =   ALMoviePlayerControlsStyleFullscreen;
     
     
     
@@ -429,7 +432,7 @@ static const CGFloat iPhoneScreenPortraitWidth = 320.f;
     }
     
     [self performSelector:@selector(hideControls:) withObject:nil afterDelay:self.fadeDelay];
-
+    
     
     
     
@@ -439,26 +442,26 @@ static const CGFloat iPhoneScreenPortraitWidth = 320.f;
 
 //tira o player do fullscrenn quando vira a tela
 - (void)sair_fullscrenn{
-
-      [self.moviePlayer setFullscreen:NO];
-//    
-//    if (self.moviePlayer.isFullscreen) {
-        self.style =  ALMoviePlayerControlsStyleEmbedded;
-        
-//    }else{
-//        
-//        self.style = ALMoviePlayerControlsStyleDefault;
-//        
-//    }
+    
+    [self.moviePlayer setFullscreen:NO];
+    //
+    //    if (self.moviePlayer.isFullscreen) {
+    self.style =  ALMoviePlayerControlsStyleEmbedded;
+    
+    //    }else{
+    //
+    //        self.style = ALMoviePlayerControlsStyleDefault;
+    //
+    //    }
     
     if (self.moviePlayer.currentPlaybackRate != 1.f) {
         self.moviePlayer.currentPlaybackRate = 1.f;
     }
-   
+    
     [self performSelector:@selector(hideControls:) withObject:nil afterDelay:self.fadeDelay];
     
-   
-  
+    
+    
     
 }
 
@@ -680,7 +683,7 @@ static const CGFloat iPhoneScreenPortraitWidth = 320.f;
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-            
+    
     if (self.style == ALMoviePlayerControlsStyleNone)
         return;
     
@@ -698,7 +701,7 @@ static const CGFloat iPhoneScreenPortraitWidth = 320.f;
     CGFloat airplayHeight = 22.f;
     CGFloat playWidth = 18.f;
     CGFloat playHeight = 22.f;
-    CGFloat labelWidth = 30.f;
+    CGFloat labelWidth = 40.f;
     
     if (self.style == ALMoviePlayerControlsStyleFullscreen || (self.style == ALMoviePlayerControlsStyleDefault && self.moviePlayer.isFullscreen)) {
         //top bar
@@ -717,15 +720,15 @@ static const CGFloat iPhoneScreenPortraitWidth = 320.f;
         self.playPauseButton.frame = CGRectMake(self.bottomBar.frame.size.width/2 - playWidth/2, self.barHeight/2 - playHeight/2, playWidth, playHeight);
         self.seekForwardButton.frame = CGRectMake(self.playPauseButton.frame.origin.x + self.playPauseButton.frame.size.width + paddingBetweenPlaybackButtons, self.barHeight/2 - seekHeight/2 + 1.f, seekWidth, seekHeight);
         self.seekBackwardButton.frame = CGRectMake(self.playPauseButton.frame.origin.x - paddingBetweenPlaybackButtons - seekWidth, self.barHeight/2 - seekHeight/2 + 1.f, seekWidth, seekHeight);
-        
-        //hide volume view in iPhone's portrait orientation
-        if (self.frame.size.width <= iPhoneScreenPortraitWidth) {
-            self.volumeView.alpha = 0.f;
-        } else {
-            self.volumeView.alpha = 1.f;
-            self.volumeView.frame = CGRectMake(paddingFromBezel, self.barHeight/2 - volumeHeight/2, volumeWidth, volumeHeight);
-        }
-        
+        //
+        //        //hide volume view in iPhone's portrait orientation
+        //        if (self.frame.size.width <= iPhoneScreenPortraitWidth) {
+        self.volumeView.alpha = 0.f;
+        //        } else {
+        //            self.volumeView.alpha = 1.f;
+        //            self.volumeView.frame = CGRectMake(paddingFromBezel, self.barHeight/2 - volumeHeight/2, volumeWidth, volumeHeight);
+        //        }
+        //
         self.airplayView.frame = CGRectMake(self.bottomBar.frame.size.width - paddingFromBezel - airplayWidth, self.barHeight/2 - airplayHeight/2, airplayWidth, airplayHeight);
     }
     
@@ -741,12 +744,15 @@ static const CGFloat iPhoneScreenPortraitWidth = 320.f;
         CGFloat fullscreenHeight = fullscreenWidth;
         self.fullscreenButton.frame = CGRectMake(self.bottomBar.frame.size.width - paddingFromBezel - fullscreenWidth, self.barHeight/2 - fullscreenHeight/2, fullscreenWidth, fullscreenHeight);
         self.airplayView.frame = CGRectMake(self.fullscreenButton.frame.origin.x - paddingBetweenButtons - airplayWidth, self.barHeight/2 - airplayHeight/2, airplayWidth, airplayHeight);
-        self.timeRemainingLabel.frame = CGRectMake(self.airplayView.frame.origin.x - paddingBetweenButtons - labelWidth, 0, labelWidth, self.barHeight);
+        
+        //mudar posição do botão de tempo - Clau
+        self.timeRemainingLabel.frame = CGRectMake(self.bottomBar.frame.size.width- paddingBetweenButtons - labelWidth, 0, labelWidth, self.barHeight);
     }
     
     //duration slider
     CGFloat timeRemainingX = self.timeRemainingLabel.frame.origin.x;
     CGFloat timeElapsedX = self.timeElapsedLabel.frame.origin.x;
+    //tamanho do slider
     CGFloat sliderWidth = ((timeRemainingX - paddingBetweenLabelsAndSlider) - (timeElapsedX + self.timeElapsedLabel.frame.size.width + paddingBetweenLabelsAndSlider));
     self.durationSlider.frame = CGRectMake(timeElapsedX + self.timeElapsedLabel.frame.size.width + paddingBetweenLabelsAndSlider, self.barHeight/2 - sliderHeight/2, sliderWidth, sliderHeight);
     

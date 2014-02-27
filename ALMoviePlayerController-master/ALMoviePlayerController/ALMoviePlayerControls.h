@@ -40,27 +40,27 @@ typedef enum {
 
 @interface ALMoviePlayerControls : UIView
 
-/** 
+/**
  The style of the controls. Can be changed on the fly.
  
  Default value is ALMoviePlayerControlsStyleDefault
  */
 @property (nonatomic, assign) ALMoviePlayerControlsStyle style;
 
-/** 
+/**
  The state of the controls.
  */
 @property (nonatomic, readonly) ALMoviePlayerControlsState state;
 
 /**
- The color of the control bars. 
+ The color of the control bars.
  
  Default value is black with a hint of transparency.
  */
 @property (nonatomic, strong) UIColor *barColor;
 
 /**
- The height of the control bars. 
+ The height of the control bars.
  
  Default value is 70.f for iOS7+ and 50.f for previous versions.
  */
@@ -80,7 +80,7 @@ typedef enum {
  */
 @property (nonatomic, assign) float seekRate;
 
-/** 
+/**
  Should the time-remaining number decrement as the video plays?
  
  Default value is NO.
@@ -93,7 +93,7 @@ typedef enum {
 @property (nonatomic, readonly, getter = isShowing) BOOL showing;
 
 
-/** 
+/**
  The default initializer method. The parameter may not be nil.
  */
 - (id)initWithMoviePlayer:(ALMoviePlayerController *)moviePlayer style:(ALMoviePlayerControlsStyle)style;
@@ -101,6 +101,7 @@ typedef enum {
 
 - (void)fullscreenPressed:(UIButton *)button;
 
+- (void)scalePressed:(UIButton *)button;
 
 - (void)sair_fullscrenn;
 
